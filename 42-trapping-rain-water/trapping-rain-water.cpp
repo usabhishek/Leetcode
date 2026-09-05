@@ -9,13 +9,13 @@ public:
 
         while(left <= right){
             if(height[left] <= height[right]){
-                if(height[left] > leftmax){
+                if(height[left] >= leftmax){
                     leftmax = height[left];
                 }else water += leftmax - height[left];
 
                 left++;
             }else{
-                if(height[right] > rightmax){
+                if(height[right] >= rightmax){
                     rightmax = height[right];
                 }else water += rightmax - height[right];
 
