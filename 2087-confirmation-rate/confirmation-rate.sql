@@ -1,0 +1,1 @@
+select s.user_id, COALESCE(round(avg(c.action = 'confirmed'), 2), 0) as confirmation_rate from Signups s Left Join Confirmations c on s.user_id = c.user_id group by s.user_id;
