@@ -5,15 +5,13 @@ public:
         int res = 0;
 
         for (int i = 0; i < n; i++) {
+            unordered_set<int> st;
+
             for (int j = i; j < n; j++) {
-                unordered_set<int> st;
-
-                for (int k = i; k <= j; k++) {
-                    st.insert(nums[k]);
-                }
-
-                res += st.size() * st.size();
-                st.clear();
+                st.insert(nums[j]);
+                
+                int d = st.size();
+                res += d * d;
             }
         }
 
